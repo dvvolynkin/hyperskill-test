@@ -1,0 +1,206 @@
+{
+    "java": {
+        "code_problems": [
+            {
+                "topic_id": 89,
+                "topic_title": "For-loop",
+                "topic_theory_url": "https://hyperskill.org/learn/step/3505",
+                "step_id": 2187,
+                "step_title": "The sum of integers from a to b",
+                "step_description": "<p>Print the sum of all integers from <strong><em>a</em></strong> to <strong><em>b</em></strong> including both.</p>\n<p>It is guaranteed that <strong><em>a</em></strong> &lt; <strong><em>b</em></strong> in all test cases.</p>\n",
+                "step_url": "https://hyperskill.org/learn/step/2187",
+                "code_template": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        // start coding here\n    }\n}",
+                "test_cases": [
+                    {
+                        "input": "5\n21\n",
+                        "output": "221"
+                    }
+                ],
+                "wrong_code_submission": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n\n        int a = scanner.nextInt();\n        int b = scanner.nextInt();\n        int n = scanner.nextInt();\n        int sum = 0;\n\n        for (int i = a; i <= b; i++) {\n            if (i % n == 0) {\n            sum++;\n            }\n        }\n        System.out.println(sum);\n    }\n}",
+                "default_feedback": "Failed test #1 of 10. Runtime error\n\nThis is a sample test from the problem statement!\n\nTest input:\n3\n22\n\nCorrect output:\n250\n\nYour code output:\n\n\nError:\nException in thread \"main\" java.util.NoSuchElementException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:937)\n\tat java.base/java.util.Scanner.next(Scanner.java:1594)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2258)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2212)\n\tat Main.main(Main.java:9)\n",
+                "gpt_current_feedback": "1. Correct the input reading: Ensure you read all required inputs before processing the sum calculation.\n2. Check the total number of integers to sum: Verify if the number of integers to sum (n) is provided and adjust the logic accordingly.\n3. Update the sum calculation: Instead of incrementing the sum variable, sum the integers themselves based on the conditions.\n4. Refine the sum condition: Consider all integers between a and b, inclusive, that are divisible by n for calculating the final sum.",
+                "correct_code_submission": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n\n        int a = scanner.nextInt();\n        int b = scanner.nextInt();\n\n        int sum = 0;\n        for (int i = a; i <= b; i++) {\n            sum += i;\n        }\n        \n        System.out.println(sum);\n    }\n}\n"
+            },
+            {
+                "topic_id": 7,
+                "topic_title": "Grouping classes with packages",
+                "topic_theory_url": "https://hyperskill.org/learn/step/3621",
+                "step_id": 9896,
+                "step_title": "Sorting arrays",
+                "step_description": "<p></p>\n<p>The class <code class=\"java\">Arrays</code> provides a number of useful methods for processing arrays. Among them, there's a commonly used one called <code class=\"java\">sort</code>. It allows you to sort any array (string array, integer array, or even object array ). It accepts one argument: the array itself. It modifies the array, returning nothing. </p>\n<p>In this task, you need to call this method from the <code class=\"java\">Arrays</code> class without using an import statement.</p>",
+                "step_url": "https://hyperskill.org/learn/step/9896",
+                "code_template": "class ArraySorting {\n    /**\n     * @param array unordered sequence of strings\n     * @return ordered array of strings\n     */\n    public static String[] sortArray(String[] array) {\n        // write your code here\n    }\n}",
+                "test_cases": [
+                    {
+                        "input": "y d b u t f m h x q",
+                        "output": "b d f h m q t u x y\n"
+                    }
+                ],
+                "wrong_code_submission": "class ArraySorting {\n    /**\n     * @param array unordered sequence of strings\n     * @return ordered array of strings\n     */\n    public static String[] sortArray(String[] array) {\n         String[] sortedArray = java.util.Arrays.sort(array);\n        return sortedArray;\n    }\n}\n",
+                "default_feedback": "Compilation error\nMain.java:17: error: incompatible types: void cannot be converted to String[]\n         String[] sortedArray = java.util.Arrays.sort(array);\n                                                     ^\n1 error\n",
+                "gpt_current_feedback": "1. Change java.util.Arrays.sort(array) to java.util.Arrays.sort(array) method does not return a sorted array.\n\n2. Update the return type of the sortArray method to void since the sorting is done on the input array itself. \n\n3. Remove the return statement as the method does not need to return anything after sorting the array.",
+                "correct_code_submission": "class ArraySorting {\n    /**\n     * @param array unordered sequence of strings\n     * @return ordered array of strings\n     */\n    public static String[] sortArray(String[] array) {\n        // write your code here\n        java.util.Arrays.sort(array);\n        return array;\n    }\n}\n"
+            },
+            {
+                "topic_id": 201,
+                "topic_title": "StringBuilder",
+                "topic_theory_url": "https://hyperskill.org/learn/step/3812",
+                "step_id": 23735,
+                "step_title": "Create an email",
+                "step_description": "<p></p>\n<p>We need to create an email name for an employee. For this, implement a method that takes a <code class=\"language-java\">String</code> <strong>name</strong> and a <code class=\"language-java\">String</code> <strong>surname</strong> as an argument. The method should concatenate the <strong>name</strong>, the <strong>surname,</strong> and at the end, add the domain \"<strong>@work.net</strong>\". Return the result. It's guaranteed that input strings will not be empty.</p>\n<p>Use <code class=\"language-java\">StringBuilder</code> to solve the problem.</p>\n<p><strong>Sample Input 1:</strong></p>\n<pre><code class=\"language-java\">Bill\nShates</code></pre>\n<p><strong>Sample Output 1:</strong></p>\n<pre><code class=\"language-java\">BillShates@work.net</code></pre>\n<p><strong> Sample Input 2:</strong></p>\n<pre><code class=\"language-java\">Elon  \nTusk</code></pre>\n<p><strong>Sample Output 2:</strong></p>\n<pre><code class=\"language-java\">ElonTusk@work.net</code></pre>",
+                "step_url": "https://hyperskill.org/learn/step/23735",
+                "code_template": "No template available.",
+                "test_cases": [
+                    {
+                        "input": "Bill\nShates",
+                        "output": "BillShates@work.net"
+                    }
+                ],
+                "wrong_code_submission": "import java.util.Scanner;\n\nclass EmployeeManagement {\n\n    public static String createEmail(String name, String surname) {\nStringBuilder email = new StringBuilder(name).append(surname).append(\"@work.net\");\n        // write your code here\n        return email;\n    }\n\n    // Don't change the code below\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        String name = scanner.next();\n        String surname = scanner.next();\n\n        String completeEmail = createEmail(name, surname);\n\n        System.out.println(completeEmail);\n    }\n}",
+                "default_feedback": "Compilation error\nMain.java:8: error: incompatible types: StringBuilder cannot be converted to String\n        return email;\n               ^\n1 error\n",
+                "gpt_current_feedback": "1. Update the return type of the `createEmail` method to be `String`.\n2. Ensure the `StringBuilder` instance is converted to a `String` before returning it from the method.\n3. Convert the `StringBuilder` instance `email` to a `String` using the `toString()` method before returning.",
+                "correct_code_submission": "import java.util.Scanner;\n\nclass EmployeeManagement {\n\n    public static String createEmail(String name, String surname) {\n        // write your code here\n        StringBuilder emailBuilder = new StringBuilder();\n        emailBuilder.append(name);\n        emailBuilder.append(surname);\n        emailBuilder.append(\"@work.net\");\n        return emailBuilder.toString();\n    }\n\n    // Don't change the code below\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        String name = scanner.next();\n        String surname = scanner.next();\n\n        String completeEmail = createEmail(name, surname);\n\n        System.out.println(completeEmail);\n    }\n}\n"
+            },
+            {
+                "topic_id": 1100,
+                "topic_title": "Lambda expressions",
+                "topic_theory_url": "https://hyperskill.org/learn/step/11635",
+                "step_id": 2363,
+                "step_title": "Max of two integers",
+                "step_description": "<p>Write a lambda expression that accepts two integer arguments and returns the maximum of them.</p>\n<p>Try not to use the Math library.</p>\n<p><strong>Solution format. </strong>Submit your lambda expression in <strong>any valid</strong> format<strong> </strong><strong>with \";\" at the end</strong>.</p>\n<p><strong>Examples:</strong> (x, y) -&gt; x + y; (x) -&gt; { return x; };</p>",
+                "step_url": "https://hyperskill.org/learn/step/2363",
+                "code_template": "import java.util.function.IntBinaryOperator;\n\nclass Operator {\n\n    public static IntBinaryOperator binaryOperator = // Write your code here\n}",
+                "test_cases": [
+                    {
+                        "input": "1 3\n",
+                        "output": "3"
+                    }
+                ],
+                "wrong_code_submission": "import java.util.Scanner;\nimport java.util.function.BinaryOperator;\nimport java.util.function.Function;\nimport java.util.function.IntBinaryOperator;\n\nclass Operator {\n\n    public static IntBinaryOperator binaryOperator;\n        // Write your code here\n    //\n\n\n}\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        Integer num1 = scanner.nextInt();\n        Integer num2 = scanner.nextInt();\n        Operator operator = new Operator();\n\n\n        BinaryOperator<Integer> findMax = (a, b) -> a > b ? a : b;\n\n        System.out.println(findMax.apply(num1, num2));\n\n    }\n}",
+                "default_feedback": "Failed test #1 of 15. Runtime error\n\nThis is a sample test from the problem statement!\n\nTest input:\n4 2\n\nCorrect output:\n4\n\nYour code output:\n\n\nError:\nException in thread \"main\" java.lang.NullPointerException: Cannot invoke \"java.util.function.IntBinaryOperator.applyAsInt(int, int)\" because \"Operator.binaryOperator\" is null\n\tat LambdasMain.max(Main.java:46)\n\tat LambdasMain.main(Main.java:40)\n",
+                "gpt_current_feedback": "1. Initialize the 'binaryOperator' variable in the 'Operator' class with a lambda expression to find the maximum of two integers.\n2. Change the type of 'binaryOperator' to 'IntBinaryOperator' as specified in the problem statement.\n3. Update the lambda expression to compare and return the maximum value correctly.\n4. Ensure the lambda expression uses the correct syntax for comparing the integers.",
+                "correct_code_submission": "import java.util.function.IntBinaryOperator;\n\nclass Operator {\n    \n    public static IntBinaryOperator binaryOperator = (x, y) -> x > y ? x : y;\n}\n"
+            },
+            {
+                "topic_id": 33,
+                "topic_title": "Multiple conditions: switch",
+                "topic_theory_url": "https://hyperskill.org/learn/step/3504",
+                "step_id": 3481,
+                "step_title": "Harry Potter",
+                "step_description": "<p>Harry Potter needs help identifying what each house means.</p>\n<p>Read a string representing a house and output the following:</p>\n<ul>\n<li>if it is <strong>\"gryffindor\"</strong>, output <strong>\"bravery\"</strong>;</li>\n<li>if it is <strong>\"hufflepuff\"</strong>, output <strong>\"loyalty\"</strong>;</li>\n<li>if it is <strong>\"slytherin\"</strong>, output <strong>\"cunning\"</strong>;</li>\n<li>if it is <strong>\"ravenclaw\"</strong>, output <strong>\"intellect\"</strong>;</li>\n<li>otherwise, output <strong>\"not a valid house\"</strong>.</li>\n</ul>\n<p>The problem was taken from the course <a href=\"https://stepik.org/course/3050\" rel=\"nofollow noopener noreferrer\" target=\"_blank\" title=\"Link: https://stepik.org/course/3050\">Introduction to JavaScript and React</a> by <a href=\"https://stepik.org/users/32110397\" rel=\"nofollow noopener noreferrer\" target=\"_blank\" title=\"Link: https://stepik.org/users/32110397\">Ken McGrady</a> and adapted for our educational platform.</p>",
+                "step_url": "https://hyperskill.org/learn/step/3481",
+                "code_template": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        // start coding here\n    }\n}",
+                "test_cases": [
+                    {
+                        "input": "gryffindor",
+                        "output": "bravery"
+                    }
+                ],
+                "wrong_code_submission": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        String input = scanner.next();\n            switch (input) {\n                case \"gryffindor\" -> {\n                    System.out.println(\"bravery\");\n                    break;\n                }\n                case \"hufflepuff\" -> {\n                    System.out.println(\"loyalty\");\n                    break;\n                }\n                case \"slytherin\" -> {\n                    System.out.println(\"cunning\");\n                    break;\n                }\n                case \"ravenclaw\" -> {\n                    System.out.println(\"\");\n                    break;\n                }\n                default -> {\n                    System.out.println(\"not a valid house\");\n                    break;\n                }\n            }\n    }\n}\n",
+                "default_feedback": "",
+                "gpt_current_feedback": "1. Change \"scanner.next()\" to \"scanner.nextLine()\" to read the entire input line.\n2. Update the switch cases to use the \"case\" keyword followed by the house names within double quotes.\n3. Modify the \"case\" statements to use a colon \":\" instead of \"->\" to separate the case from the code block.\n4. Adjust the case for \"ravenclaw\" to print \"intellect\" instead of an empty string.",
+                "correct_code_submission": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n\n        String house = scanner.nextLine().toLowerCase();\n\n        switch (house) {\n            case \"gryffindor\":\n                System.out.println(\"bravery\");\n                break;\n            case \"hufflepuff\":\n                System.out.println(\"loyalty\");\n                break;\n            case \"slytherin\":\n                System.out.println(\"cunning\");\n                break;\n            case \"ravenclaw\":\n                System.out.println(\"intellect\");\n                break;\n            default:\n                System.out.println(\"not a valid house\");\n                break;\n        }\n    }\n}\n"
+            },
+            {
+                "topic_id": 104,
+                "topic_title": "LocalDate",
+                "topic_theory_url": "https://hyperskill.org/learn/step/3592",
+                "step_id": 2850,
+                "step_title": "Convert numbers to days",
+                "step_description": "<p>Write a program that reads a year and three days of this year (by their numbers) from the standard input and output all dates corresponding to these numbers in the same order.</p>",
+                "step_url": "https://hyperskill.org/learn/step/2850",
+                "code_template": "class Main {\n    public static void main(String[] args) {\n        // put your code here\n    }\n}",
+                "test_cases": [
+                    {
+                        "input": "2017\n315\n5\n42",
+                        "output": "2017-11-11\n2017-01-05\n2017-02-11"
+                    }
+                ],
+                "wrong_code_submission": "import java util.Scannerl\nclass Main {\n    public static void main(String[] args) {\n        // put your code here\n        Scanner sc = new Scanner(System.in);\n        int year = sc.nextInt();\n        for (int i = 0; i < 3; i++) {\n            int day = sc.nextInt();\n            LocalDate date = LocalDate.ofYearDate(year, day);\n            System.out.println(date);\n        }\n        \n    }\n}\n",
+                "default_feedback": "",
+                "gpt_current_feedback": "1. Import statement for Scanner class is incorrect.\n2. There is a typo in the import statement for Scanner, fix it.\n3. Import statement should be \"import java.util.Scanner;\".\n4. The method to create a LocalDate object is incorrect.\n5. Change \"LocalDate.ofYearDate(year, day);\" to correct method to create the date.\n6. Use proper method to create LocalDate: \"LocalDate.ofYearDay(year, day)\".\n7. Make sure to handle potential exceptions related to Scanner input.",
+                "correct_code_submission": "import java.time.LocalDate;\nimport java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        int year = scanner.nextInt();\n        for (int i = 0; i < 3; i++) {\n            int day = scanner.nextInt();\n            LocalDate date = LocalDate.ofYearDay(year, day);\n            System.out.println(date);\n        }\n    }\n}\n"
+            },
+            {
+                "topic_id": 2936,
+                "topic_title": "Atomics",
+                "topic_theory_url": "https://hyperskill.org/learn/step/29304",
+                "step_id": 29313,
+                "step_title": "Flagging",
+                "step_description": "<p></p>\n<p>Suppose you have a shared boolean variable represented by an <code class=\"java\">AtomicBoolean</code> <code class=\"java\">flag</code>. Write a method <code class=\"java\">setFlag</code> that atomically sets the value of the flag to <code class=\"java\">true</code> if the current value is <code class=\"java\">false</code>, and returns <code class=\"java\">true</code> if the value was updated. If the current value of the flag is already <code class=\"java\">true</code>, the method must return <code class=\"java\">false</code>.</p>\n<p>In the test below the <code class=\"java\">flag</code> is initialized to false. We call the <code class=\"java\">setFlag</code> 3 times. </p>",
+                "step_url": "https://hyperskill.org/learn/step/29313",
+                "code_template": "import java.util.concurrent.atomic.AtomicBoolean;\n\nclass Flag {\n   public boolean setFlag(AtomicBoolean flag) {\n        //Write your code here\n    }\n}",
+                "test_cases": [
+                    {
+                        "input": "\n",
+                        "output": "true\nfalse\ntrue\n"
+                    }
+                ],
+                "wrong_code_submission": "import java.util.concurrent.atomic.AtomicBoolean;\n\nclass Flag {\n   public boolean setFlag(AtomicBoolean flag) {\n        return flag.get();\n    }\n}",
+                "default_feedback": "Failed. Wrong answer\n\nThis is a sample test from the problem statement!\n\nTest input:\n\n\nCorrect output:\ntrue\nfalse\ntrue\n\n\nYour code output:\nfalse\nfalse\nfalse\n",
+                "gpt_current_feedback": "1. In the `setFlag` method, you need to implement the logic to atomically set the flag value only if the current value is false.\n2. Check the current value of the flag using `flag.get()`.\n3. If the current value is false, use `flag.compareAndSet(false, true)` to set the flag to true atomically.\n4. Return true if the value was successfully updated using `compareAndSet`. Otherwise, return false.\n5. Ensure the method returns the correct result based on whether the flag value was updated correctly or not.",
+                "correct_code_submission": "import java.util.concurrent.atomic.AtomicBoolean;\n\nclass Flag {\n    public boolean setFlag(AtomicBoolean flag) {\n        return flag.compareAndSet(false, true);\n    }\n}\n"
+            },
+            {
+                "topic_id": 65,
+                "topic_title": "Exception handling",
+                "topic_theory_url": "https://hyperskill.org/learn/step/3552",
+                "step_id": 2478,
+                "step_title": "String to double conversion",
+                "step_description": "<p>Consider a method that takes a string and converts it to a double. If the input string happens to be null or of an unsuitable format, a runtime exception occurs and the program fails.</p>\n<p>Fix the method so it would catch any exception and return the default value 0 (zero) if an exception occurred.</p>",
+                "step_url": "https://hyperskill.org/learn/step/2478",
+                "code_template": "class Converter {\n\n    /**\n     * It returns a double value or 0 if an exception occurred\n     */\n    public static double convertStringToDouble(String input) {\n        return Double.parseDouble(input);\n    }\n}",
+                "test_cases": [
+                    {
+                        "input": "123.0\n",
+                        "output": "123.0"
+                    }
+                ],
+                "wrong_code_submission": "import java.util.Scanner;\n\nclass Converter {\n\n    public static double convertStringToDouble(String input) {\n        return Double.parseDouble(input);\n    }\n\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        String input = scanner.nextLine();\n        scanner.close();\n\n        try {\n            System.out.println(convertStringToDouble(input));\n        } catch (NumberFormatException | NullPointerException e) {\n            System.out.println(0);\n        }\n    }\n}\n",
+                "default_feedback": "Failed test #3 of 9. Wrong answer\n",
+                "gpt_current_feedback": "1. Modify the catch block to catch all Exceptions instead of specifying NumberFormatException and NullPointerException.\n2. Within the catch block, output a default value of 0 instead of using System.out.println(0).\n3. Handle the case when the input string is null by also returning 0 in this case.\n4. Implement a check to ensure the input string is not null before calling Double.parseDouble().\n5. To prevent Scanner resource leakage, move the scanner.close() invocation inside a finally block after the try-catch block.\n6. Update the code to ensure the Scanner is closed even if an exception occurs.",
+                "correct_code_submission": "class Converter {\n\n    /**\n     * It returns a double value or 0 if an exception occurred\n     */\n    public static double convertStringToDouble(String input) {\n        try {\n            return Double.parseDouble(input);\n        } catch (Exception e) {\n            return 0;\n        }\n    }\n}\n"
+            },
+            {
+                "topic_id": 88,
+                "topic_title": "Comparing values. Relational operators",
+                "topic_theory_url": "https://hyperskill.org/learn/step/3512",
+                "step_id": 2273,
+                "step_title": "Is between",
+                "step_description": "<p>Write a program that reads three integer numbers and prints <strong>true </strong>if the first number is between the second and the third one (inclusive). Otherwise, it must print <strong>false</strong>.</p>\n<p> </p>\n<p>The last two arguments may not be sorted.</p>",
+                "step_url": "https://hyperskill.org/learn/step/2273",
+                "code_template": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        // put your code here\n    }\n}",
+                "test_cases": [
+                    {
+                        "input": "3 3 3\n",
+                        "output": "true"
+                    }
+                ],
+                "wrong_code_submission": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        String numbers = scanner.nextLine();\n        String[] numbersArray = numbersString.split(\" \"); // Split the string by whitespace\n        \n        // Initialize an integer array to store the parsed numbers\n        int[] intArray = new int[numbersArray.length];\n        \n        // Parse each string element in the numbersArray to an integer and store it in the intArray\n        for (int i = 0; i < numbersArray.length; i++) {\n            intArray[i] = Integer.parseInt(numbersArray[i]);\n        }\n        if(intArray[0]>intArray[1]&&intArray[0]<=intArray[2]){\n            System.out.println(\"true\");\n        }\n        else{\n            System.out.println(\"false\");\n        }\n    }\n}\n",
+                "default_feedback": "Compilation error\nMain.java:7: error: cannot find symbol\n        String[] numbersArray = numbersString.split(\" \"); // Split the string by whitespace\n                                ^\n  symbol:   variable numbersString\n  location: class Main\n1 error\n",
+                "gpt_current_feedback": "1. Change \"numbersString\" to \"numbers\" in line 7 for the variable used in splitting.\n2. Use \"numbers\" instead of \"numbersString\" to split the input correctly in line 7.\n3. Update the condition in the if statement to check for the first number between the second and third numbers inclusively.\n4. Ensure the logical condition is correct by checking if the first number is greater than or equal to the second number AND less than or equal to the third number.",
+                "correct_code_submission": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        // put your code here\n        int num1 = scanner.nextInt();\n        int num2 = scanner.nextInt();\n        int num3 = scanner.nextInt();\n        \n        boolean isBetween = num1 >= Math.min(num2, num3) && num1 <= Math.max(num2, num3);\n        System.out.println(isBetween);\n    }\n}\n"
+            },
+            {
+                "topic_id": 9,
+                "topic_title": "String",
+                "topic_theory_url": "https://hyperskill.org/learn/step/3523",
+                "step_id": 2719,
+                "step_title": "Replacing 'a' with 'b'",
+                "step_description": "<p>Write a program that reads a string and replaces all occurrences of the letter <code class=\"java\">'a'</code> with the letter <code class=\"java\">'b'</code>.</p>\n<p>The program should print out the resulting string.</p>",
+                "step_url": "https://hyperskill.org/learn/step/2719",
+                "code_template": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        // start coding here\n    }\n}",
+                "test_cases": [
+                    {
+                        "input": "aaa",
+                        "output": "bbb"
+                    }
+                ],
+                "wrong_code_submission": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        String x = scanner.nextLine();\n        String str1= x.replaceAll(\"a\", \"b\"); //string\n    }\n}\n",
+                "default_feedback": "Failed test #1 of 9. Wrong answer\n\nThis is a sample test from the problem statement!\n\nTest input:\naaa\nCorrect output:\nbbb\n\nYour code output:\n\n",
+                "gpt_current_feedback": "1. Update the variable assignment line to store the modified string after replacing 'a' with 'b'.\n2. You need to output the modified string to see the replaced characters.",
+                "correct_code_submission": "import java.util.Scanner;\n\nclass Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        // start coding here\n        String input = scanner.nextLine();\n        String output = input.replace('a', 'b');\n        System.out.println(output);\n    }\n}\n"
+            }
+        ]
+    }
+}

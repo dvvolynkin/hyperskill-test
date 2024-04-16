@@ -1,0 +1,71 @@
+
+Submission system output:
+
+task_description: {{task_description}}
+test_cases: {{test_cases}}
+submission_system_output: {{submission_system_output}}
+user_wrong_answer: {{user_wrong_answer}}
+test_correct_answer: {{test_correct_answer}}
+
+Based on the provided system feedback, 
+perform an internal analysis of the specific errors identified in the student's wrong code submission. 
+This internal analysis should summarize the issues without resolving them and is meant for internal
+processing only. 
+Following the analysis, prepare a user-facing feedback message that explains 
+these errors and offers actionable advice without directly solving the problem. 
+The output should be structured as follows:
+
+Internal Analysis:
+- Identify specific errors based on the error message and the code submitted.
+- Assess the implications of these errors on the student's understanding of the programming concepts.
+
+++++++
+User-Facing Feedback:
+- IMPORTANT: Highlight the specific errors identified in student's code.
+- Provide structured, actionable advice on how to correct these errors.
+- Encourage best coding practices and explain these practices in a manner simple enough for an adult programming novice.
+- Use a list format for clarity and simplicity.
+IMPORTANT: Do NOT provide the correct solution directly, only hints and guidance.
+IMPORTANT: Follow the answer stucture of the examples
+
+
+Examples of complete output:
+
+Example 1:
+```
+Internal Analysis:
+- Error: 'NameError' for undefined variable 'word'.
+- Issue: The student did not define 'word' before attempting to use it, indicating a misunderstanding of how variables must be declared and used.
+
+++++++
+User-Facing Feedback:
+1. **Issue Identified:** You attempted to use a variable named 'word' which wasn't defined anywhere in your code, resulting in a 'NameError'.
+2. **Actionable Advice:** Start by defining all variables before they are used. For instance, include a line such as 'word = input("Please enter a word: ")' at the beginning of your script.
+3. **Best Practice:** Always test your program with different inputs to ensure that all variables are properly initialized and used within their scope. This practice helps avoid common errors and improves the reliability of your code.
+```
+
+Example 2:
+```
+Internal Analysis:
+- Error: 'SyntaxError' due to missing colon after an if statement.
+- Issue: The student forgot to put a colon at the end of the if statement, which is crucial for defining block scopes in Python.
+
+++++++
+User-Facing Feedback:
+1. **Issue Identified:** Your if statement is missing a colon at the end, which caused a 'SyntaxError'.
+2. **Actionable Advice:** Remember to add a colon right after the condition in your if statements. This tells Python that you're about to start a block of statements that should only execute under certain conditions.
+3. **Best Practice:** Writing small test cases to check each part of your code incrementally can help catch these types of syntax errors before they affect larger parts of your program.
+```
+
+Example 3:
+```
+Internal Analysis:
+- Error: 'IndexError' because the code attempts to access a list index that is out of range.
+- Issue: The student seems unaware of how to properly check the bounds of a list before accessing its elements.
+
+++++++
+User-Facing Feedback:
+1. **Issue Identified:** You tried to access a list element with an index that exceeds the list's boundaries, leading to an 'IndexError'.
+2. **Actionable Advice:** Always check that your index is within the valid range of the list by comparing it against the length of the list minus one. For example, you can use a condition like `if index < len(my_list):` before accessing `my_list[index]`.
+3. **Best Practice:** Implementing boundary checks for list accesses is a crucial habit that can prevent runtime errors and ensure your program handles data gracefully.
+```
