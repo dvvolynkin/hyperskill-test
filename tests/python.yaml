@@ -10,6 +10,11 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Ensure to separate inputs clearly by adding space after
+      "Enter value of n".
+
+      2. Check the order of operands in the division operation to correctly distribute
+      nuts among the squirrels.'
     id: python_0
     submission_system_output: 'Failed test #1 of 6. Wrong answer
 
@@ -73,6 +78,11 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Change the existing print statement to use string formatting
+      to match the desired output format with ''x'' as a placeholder.
+
+      2. Ensure to properly format the variables ''a'', ''b'', and ''c'' in the string
+      format.'
     id: python_1
     submission_system_output: 'Failed test #1 of 3. Wrong answer
 
@@ -125,6 +135,20 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Change the input statements to convert the input to
+      integers.
+
+      2. Validate that the input is correctly converted to integers.
+
+      3. Ensure the condition for checking normal sleep is considering all cases correctly.
+
+      4. Check if the condition for sleep deficiency is correct based on the problem
+      description.
+
+      5. Verify the condition for sleep excess according to the given problem requirements.
+
+      6. Make sure all the conditions are exclusive and cover all possible cases mentioned
+      in the problem.'
     id: python_2
     submission_system_output: ''
     task_description: '<p></p><p>Ann learned from a health TV program that it''s ideal
@@ -167,6 +191,13 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Change the comparison operator in the if statement where
+      you check for ''C'' from ''='' to ''==''.
+
+      2. Ensure the `if` statement syntax is corrected to compare correctly for equality.
+
+      3. Address the use of assignment ''='' instead of comparison ''=='' in the if
+      statement for checking the score as ''C''.'
     id: python_3
     submission_system_output: "Failed test #1 of 17. Runtime error\n\nThis is a sample\
       \ test from the problem statement!\n\nTest input:\nC C C I C C C C I I C C C\
@@ -213,6 +244,13 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Define a variable and assign it the input provided.
+
+      2. Use the variable with the film title to apply the `upper()` method for converting
+      to uppercase.
+
+      3. Ensure the variable defined in step 1 is used inside the `print()` function
+      for the correct output.'
     id: python_4
     submission_system_output: "Failed test #1 of 7. Runtime error\n\nThis is a sample\
       \ test from the problem statement!\n\nTest input:\nthe lion king\nCorrect output:\n\
@@ -248,6 +286,16 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Modify the print statement format to match the expected
+      format: "word amount" without a colon and without spaces around the colon.
+
+      2. Ensure the correct number of occurrences is displayed after each word.
+
+      3. Make sure the case of the word being counted is not changed to lowercase
+      before processing.
+
+      4. Adjust the splitting of the input sentence to consider consecutive spaces
+      as separators to avoid empty strings in the word list.'
     id: python_5
     submission_system_output: 'Failed test #1 of 21. Wrong answer
 
@@ -326,6 +374,14 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Define the function name correctly for calling, it should
+      be "greeting" instead of "greetings".
+
+      2. Ensure to call the "greeting" function with the correct parameters inside
+      the code section.
+
+      3. Make sure to follow the order of parameters as instructed in the problem
+      description.'
     id: python_6
     submission_system_output: "Failed test #1 of 2. Runtime error\n\nThis is a sample\
       \ test from the problem statement!\n\nTest input:\nSid\nNancy\nCorrect output:\n\
@@ -385,6 +441,15 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Change the print statement to print the variable word
+      concatenated with itself.
+
+      2. Ensure there are no spaces or characters added between the repetitions of
+      the word.
+
+      3. Re-run the code and verify if the output matches the expected output "marumaru".
+
+      4. Do not modify the input statement.'
     id: python_7
     submission_system_output: 'Failed test #1 of 8. Wrong answer
 
@@ -447,6 +512,17 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Change all occurrences of "input" to "input()" to correctly
+      call the input function.
+
+      2. Ensure to enclose "input()" within parentheses to read user input as strings.
+
+      3. Convert the user inputs to integers by passing them as arguments to the int()
+      function.
+
+      4. After converting all inputs to integers, calculate the sum of the three numbers.
+
+      5. Finally, print the sum value to the output.'
     id: python_8
     submission_system_output: "Failed test #1 of 11. Runtime error\n\nThis is a sample\
       \ test from the problem statement!\n\nTest input:\n3\n6\n8\nCorrect output:\n\
@@ -499,6 +575,13 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Check if the first string is in the second string using
+      the "in" keyword.
+
+      2. Make sure you are using the correct order of variables in the membership
+      test.
+
+      3. Ensure that the output correctly reflects the membership test result.'
     id: python_9
     submission_system_output: 'Failed test #2 of 3. Wrong answer
 

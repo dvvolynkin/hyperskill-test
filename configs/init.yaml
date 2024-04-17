@@ -1,0 +1,13 @@
+description: 'Init Eval'
+
+prompts:
+  - file://../prompts/mock_prompt.py
+    
+
+providers:
+  - id: 'python:../providers/mock_provider.py'
+
+tests:
+  - ../tests/python.yaml
+  - ../tests/java.yaml
+

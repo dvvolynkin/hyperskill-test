@@ -6,7 +6,7 @@ test_cases: {{test_cases}}
 submission_system_output: {{submission_system_output}}
 user_wrong_answer: {{user_wrong_answer}}
 test_correct_answer: {{test_correct_answer}}
-
+    
 Based on the provided system feedback, 
 perform an internal analysis of the specific errors identified in the student's wrong code submission. 
 This internal analysis should summarize the issues without resolving them and is meant for internal

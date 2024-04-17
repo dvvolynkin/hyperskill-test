@@ -10,6 +10,17 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Correct the input reading: Ensure you read all required
+      inputs before processing the sum calculation.
+
+      2. Check the total number of integers to sum: Verify if the number of integers
+      to sum (n) is provided and adjust the logic accordingly.
+
+      3. Update the sum calculation: Instead of incrementing the sum variable, sum
+      the integers themselves based on the conditions.
+
+      4. Refine the sum condition: Consider all integers between a and b, inclusive,
+      that are divisible by n for calculating the final sum.'
     id: java_0
     submission_system_output: "Failed test #1 of 10. Runtime error\n\nThis is a sample\
       \ test from the problem statement!\n\nTest input:\n3\n22\n\nCorrect output:\n\
@@ -54,6 +65,11 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: "1. Change java.util.Arrays.sort(array) to java.util.Arrays.sort(array)\
+      \ method does not return a sorted array.\n\n2. Update the return type of the\
+      \ sortArray method to void since the sorting is done on the input array itself.\
+      \ \n\n3. Remove the return statement as the method does not need to return anything\
+      \ after sorting the array."
     id: java_1
     submission_system_output: "Compilation error\nMain.java:17: error: incompatible\
       \ types: void cannot be converted to String[]\n         String[] sortedArray\
@@ -95,6 +111,14 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Update the return type of the `createEmail` method to
+      be `String`.
+
+      2. Ensure the `StringBuilder` instance is converted to a `String` before returning
+      it from the method.
+
+      3. Convert the `StringBuilder` instance `email` to a `String` using the `toString()`
+      method before returning.'
     id: java_2
     submission_system_output: "Compilation error\nMain.java:8: error: incompatible\
       \ types: StringBuilder cannot be converted to String\n        return email;\n\
@@ -148,6 +172,15 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Initialize the ''binaryOperator'' variable in the ''Operator''
+      class with a lambda expression to find the maximum of two integers.
+
+      2. Change the type of ''binaryOperator'' to ''IntBinaryOperator'' as specified
+      in the problem statement.
+
+      3. Update the lambda expression to compare and return the maximum value correctly.
+
+      4. Ensure the lambda expression uses the correct syntax for comparing the integers.'
     id: java_3
     submission_system_output: "Failed test #1 of 15. Runtime error\n\nThis is a sample\
       \ test from the problem statement!\n\nTest input:\n4 2\n\nCorrect output:\n\
@@ -193,6 +226,17 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Change "scanner.next()" to "scanner.nextLine()" to read
+      the entire input line.
+
+      2. Update the switch cases to use the "case" keyword followed by the house names
+      within double quotes.
+
+      3. Modify the "case" statements to use a colon ":" instead of "->" to separate
+      the case from the code block.
+
+      4. Adjust the case for "ravenclaw" to print "intellect" instead of an empty
+      string.'
     id: java_4
     submission_system_output: ''
     task_description: '<p>Harry Potter needs help identifying what each house means.</p>
@@ -257,6 +301,20 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Import statement for Scanner class is incorrect.
+
+      2. There is a typo in the import statement for Scanner, fix it.
+
+      3. Import statement should be "import java.util.Scanner;".
+
+      4. The method to create a LocalDate object is incorrect.
+
+      5. Change "LocalDate.ofYearDate(year, day);" to correct method to create the
+      date.
+
+      6. Use proper method to create LocalDate: "LocalDate.ofYearDay(year, day)".
+
+      7. Make sure to handle potential exceptions related to Scanner input.'
     id: java_5
     submission_system_output: ''
     task_description: <p>Write a program that reads a year and three days of this
@@ -299,6 +357,19 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. In the `setFlag` method, you need to implement the logic
+      to atomically set the flag value only if the current value is false.
+
+      2. Check the current value of the flag using `flag.get()`.
+
+      3. If the current value is false, use `flag.compareAndSet(false, true)` to set
+      the flag to true atomically.
+
+      4. Return true if the value was successfully updated using `compareAndSet`.
+      Otherwise, return false.
+
+      5. Ensure the method returns the correct result based on whether the flag value
+      was updated correctly or not.'
     id: java_6
     submission_system_output: 'Failed. Wrong answer
 
@@ -369,6 +440,20 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Modify the catch block to catch all Exceptions instead
+      of specifying NumberFormatException and NullPointerException.
+
+      2. Within the catch block, output a default value of 0 instead of using System.out.println(0).
+
+      3. Handle the case when the input string is null by also returning 0 in this
+      case.
+
+      4. Implement a check to ensure the input string is not null before calling Double.parseDouble().
+
+      5. To prevent Scanner resource leakage, move the scanner.close() invocation
+      inside a finally block after the try-catch block.
+
+      6. Update the code to ensure the Scanner is closed even if an exception occurs.'
     id: java_7
     submission_system_output: 'Failed test #3 of 9. Wrong answer
 
@@ -407,6 +492,18 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Change "numbersString" to "numbers" in line 7 for the
+      variable used in splitting.
+
+      2. Use "numbers" instead of "numbersString" to split the input correctly in
+      line 7.
+
+      3. Update the condition in the if statement to check for the first number between
+      the second and third numbers inclusively.
+
+      4. Ensure the logical condition is correct by checking if the first number is
+      greater than or equal to the second number AND less than or equal to the third
+      number.'
     id: java_8
     submission_system_output: "Compilation error\nMain.java:7: error: cannot find\
       \ symbol\n        String[] numbersArray = numbersString.split(\" \"); // Split\
@@ -455,6 +552,10 @@
     value: The feedback is easy to understand for a adult programming newbie with
       no experience.
   vars:
+    gpt_current_feedback: '1. Update the variable assignment line to store the modified
+      string after replacing ''a'' with ''b''.
+
+      2. You need to output the modified string to see the replaced characters.'
     id: java_9
     submission_system_output: 'Failed test #1 of 9. Wrong answer
 
